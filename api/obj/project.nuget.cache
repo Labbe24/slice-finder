@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "S0YPHOON0axOqKNyGC3JiCIJAcbY+TqeL+6awtizjtFdPx3AoOjvjTjwIwcao8BuhXIqROpkuiLAcgfZjkTR/A==",
+  "success": true,
+  "projectFilePath": "/home/lasse/sources/repos/slice-finder/api/api.fsproj",
+  "expectedPackageFiles": [
+    "/home/lasse/.nuget/packages/fsharp.core/6.0.2/fsharp.core.6.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
