@@ -1,8 +1,8 @@
 # slice-finder
 
-# Developer guid
+## Developer guid
 
-## App
+### App
 
 Run app
 
@@ -10,7 +10,7 @@ Run app
 npm start
 ```
 
-## Api
+### Api
 
 Run api
 
