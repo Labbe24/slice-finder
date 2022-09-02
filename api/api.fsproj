@@ -8,11 +8,17 @@
     <Compile Include="WeatherForecast.fs" />
     <!-- Models -->
     <Compile Include="Models/Pizza.fs" />
+    <!-- DataManagers -->
+    <Compile Include="DataManagers/PizzaDataManager.fs" />
+    <!-- Logic -->
+    <Compile Include="Logic/PizzaLogic.fs" />
     <!-- Controllers -->
-    <Compile Include="Controllers/WeatherForecastController.fs" />
+    <Compile Include="Controllers/PizzaController.fs" />
     <!-- Migrations -->
     <Compile Include="Migrations/CustomDbContextModelSnapshot.fs" />
-    <Compile Include="Migrations/20220902084620_Initial.fs" />
+    <Compile Include="Migrations/20220902103926_Initial.fs" />
+    
+    <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

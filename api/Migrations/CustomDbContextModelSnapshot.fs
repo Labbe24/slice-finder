@@ -7,15 +7,16 @@ open Microsoft.EntityFrameworkCore.Infrastructure
 open Microsoft.EntityFrameworkCore.Metadata
 open Microsoft.EntityFrameworkCore.Migrations
 open Microsoft.EntityFrameworkCore.Storage.ValueConversion
+open api.Models
 
-[<DbContext(typeof<PizzaModel.CustomDbContext>)>]
+[<DbContext(typeof<CustomDbContext>)>]
 type CustomDbContextModelSnapshot() =
     inherit ModelSnapshot()
 
     override this.BuildModel(modelBuilder: ModelBuilder) =
         modelBuilder.HasAnnotation("ProductVersion", "6.0.8") |> ignore
 
-        modelBuilder.Entity("PizzaModel+Pizza", (fun b ->
+        modelBuilder.Entity("api.Models.Pizza", (fun b ->
 
             b.Property<int>("Id")
                 .IsRequired(true)
@@ -23,7 +24,7 @@ type CustomDbContextModelSnapshot() =
                 .HasColumnType("INTEGER")
                 |> ignore
 
-            b.Property<string>("Name")
+            b.Property<string>("Title")
                 .IsRequired(true)
                 .HasColumnType("TEXT")
                 |> ignore
