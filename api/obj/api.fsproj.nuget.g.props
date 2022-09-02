@@ -12,7 +12,12 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/home/lasse/.nuget/packages/" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/6.0.8/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/6.0.8/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props')" />
+    <Import Project="$(NuGetPackageRoot)entityframeworkcore.fsharp/6.0.7/build/net5.0/EntityFrameworkCore.FSharp.props" Condition="Exists('$(NuGetPackageRoot)entityframeworkcore.fsharp/6.0.7/build/net5.0/EntityFrameworkCore.FSharp.props')" />
+  </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/home/lasse/.nuget/packages/fsharp.core/6.0.2</PkgFSharp_Core>
+    <PkgEntityFrameworkCore_FSharp Condition=" '$(PkgEntityFrameworkCore_FSharp)' == '' ">/home/lasse/.nuget/packages/entityframeworkcore.fsharp/6.0.7</PkgEntityFrameworkCore_FSharp>
   </PropertyGroup>
 </Project>

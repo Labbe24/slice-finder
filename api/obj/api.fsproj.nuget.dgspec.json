@@ -33,11 +33,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EntityFrameworkCore.FSharp": {
+              "target": "Package",
+              "version": "[6.0.7, )",
+              "generatePathProperty": true
+            },
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[6.0.2, )",
               "generatePathProperty": true
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.8, )"
             }
           },
           "imports": [
