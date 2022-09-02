@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="WeatherForecast.fs" />
     <!-- Models -->
     <Compile Include="Models/Pizza.fs" />
     <!-- DataManagers -->
@@ -16,7 +15,7 @@
     <Compile Include="Controllers/PizzaController.fs" />
     <!-- Migrations -->
     <Compile Include="Migrations/CustomDbContextModelSnapshot.fs" />
-    <Compile Include="Migrations/20220902103926_Initial.fs" />
+    <Compile Include="Migrations/20220902114456_Initial.fs" />
     
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />
@@ -25,6 +24,7 @@
   <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.FSharp" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.8" />
+    <PackageReference Include="MIcrosoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
   </ItemGroup>
 
 </Project>
