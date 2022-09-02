@@ -11,6 +11,7 @@ bin
 !.paket/paket.bootstrapper.exe
 .ionide/
 .fake
+.db
 
 # Build results
 [Dd]ebug/
