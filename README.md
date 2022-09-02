@@ -1,6 +1,6 @@
 # slice-finder
 
-## Developer guid
+## Developer guide
 
 ### App
 
