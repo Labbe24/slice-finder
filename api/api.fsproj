@@ -11,8 +11,8 @@
     <!-- Controllers -->
     <Compile Include="Controllers/WeatherForecastController.fs" />
     <!-- Migrations -->
-    <!-- <Compile Include="Migrations/CustomDbContextModelSnapshot.fs" />
-    <Compile Include="Migrations/20220902082021_Initial.fs" /> -->
+    <Compile Include="Migrations/CustomDbContextModelSnapshot.fs" />
+    <Compile Include="Migrations/20220902084620_Initial.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
