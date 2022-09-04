@@ -16,7 +16,7 @@ type Pizza() =
     [<DefaultValue>]
     val mutable private name: string
 
-    member this.Title
+    member this.Name
         with get () = this.name
         and set (value) = this.name <- value
 
