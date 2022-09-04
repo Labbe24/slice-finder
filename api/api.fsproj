@@ -15,7 +15,7 @@
     <Compile Include="Controllers/PizzaController.fs" />
     <!-- Migrations -->
     <Compile Include="Migrations/CustomDbContextModelSnapshot.fs" />
-    <Compile Include="Migrations/20220902114456_Initial.fs" />
+    <Compile Include="Migrations/20220904183843_Initial.fs" />
     
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />

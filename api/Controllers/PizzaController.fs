@@ -14,7 +14,6 @@ open api.Models
 type PizzaController(pizzaLogic: IPizzaLogic, logger: ILogger<PizzaController>) =
     inherit ControllerBase()
 
-
     [<HttpGet>]
     member this.Get() =
         let pizzas = pizzaLogic.GetPizzas()
@@ -28,7 +27,7 @@ type PizzaController(pizzaLogic: IPizzaLogic, logger: ILogger<PizzaController>) 
     [<HttpPost>]
     member this.Post([<FromBody>] pizza: Pizza) =
         match base.ModelState.IsValid with
-        | false -> ActionResult<IActionResult>(base.BadRequest())
+        | false -> ActionResult<Pizza>(base.BadRequest(pizza))
         | true ->
             pizzaLogic.CreatePizza(pizza) |> ignore
-            ActionResult<IActionResult>(base.Ok(pizza))
+            ActionResult<Pizza>(base.Ok(pizza))

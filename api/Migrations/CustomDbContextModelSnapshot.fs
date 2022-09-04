@@ -24,7 +24,7 @@ type CustomDbContextModelSnapshot() =
                 .HasColumnType("INTEGER")
                 |> ignore
 
-            b.Property<string>("Title")
+            b.Property<string>("Name")
                 .IsRequired(true)
                 .HasColumnType("TEXT")
                 |> ignore
