@@ -10,7 +10,7 @@ open api.Logic
 open api.Models
 
 [<ApiController>]
-[<Route("[controller]")>]
+[<Route("api/[controller]")>]
 type PizzaController(pizzaLogic: IPizzaLogic, logger: ILogger<PizzaController>) =
     inherit ControllerBase()
 
@@ -27,7 +27,7 @@ type PizzaController(pizzaLogic: IPizzaLogic, logger: ILogger<PizzaController>) 
     [<HttpPost>]
     member this.Post([<FromBody>] pizza: Pizza) =
         match base.ModelState.IsValid with
-        | false -> ActionResult<Pizza>(base.BadRequest(pizza))
+        | false -> ActionResult<Pizza>(``base``.BadRequest(pizza))
         | true ->
             pizzaLogic.CreatePizza(pizza) |> ignore
-            ActionResult<Pizza>(base.Ok(pizza))
+            ActionResult<Pizza>(``base``.Ok(pizza))

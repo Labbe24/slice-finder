@@ -14,6 +14,7 @@ open Microsoft.Extensions.Hosting
 open api.DataManagers
 open api.Logic
 open api.Models
+open api.Context
 
 type Startup private () =
     new(configuration: IConfiguration) as this =

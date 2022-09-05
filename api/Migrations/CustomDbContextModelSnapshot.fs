@@ -7,7 +7,7 @@ open Microsoft.EntityFrameworkCore.Infrastructure
 open Microsoft.EntityFrameworkCore.Metadata
 open Microsoft.EntityFrameworkCore.Migrations
 open Microsoft.EntityFrameworkCore.Storage.ValueConversion
-open api.Models
+open api.Context
 
 [<DbContext(typeof<CustomDbContext>)>]
 type CustomDbContextModelSnapshot() =
