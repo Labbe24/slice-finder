@@ -10,10 +10,41 @@ open Microsoft.EntityFrameworkCore.Storage.ValueConversion
 open api.Context
 
 [<DbContext(typeof<CustomDbContext>)>]
-type CustomDbContextModelSnapshot() =
-    inherit ModelSnapshot()
+[<Migration("20220925102640_RestauranteSet")>]
+type RestauranteSet() =
+    inherit Migration()
 
-    override this.BuildModel(modelBuilder: ModelBuilder) =
+    override this.Up(migrationBuilder:MigrationBuilder) =
+        migrationBuilder.CreateTable(
+            name = "Restaurantes"
+            ,columns = (fun table -> 
+            {|
+                Id =
+                    table.Column<int>(
+                        nullable = false
+                        ,``type`` = "INTEGER"
+                    ).Annotation("Sqlite:Autoincrement", true)
+                Name =
+                    table.Column<string>(
+                        nullable = false
+                        ,``type`` = "TEXT"
+                    )
+            |})
+            , constraints =
+                (fun table -> 
+                    table.PrimaryKey("PK_Restaurantes", (fun x -> (x.Id) :> obj)
+                    ) |> ignore
+                )
+        ) |> ignore
+
+
+    override this.Down(migrationBuilder:MigrationBuilder) =
+        migrationBuilder.DropTable(
+            name = "Restaurantes"
+            ) |> ignore
+
+
+    override this.BuildTargetModel(modelBuilder: ModelBuilder) =
         modelBuilder.HasAnnotation("ProductVersion", "6.0.8") |> ignore
 
         modelBuilder.Entity("api.Models.Pizza", (fun b ->

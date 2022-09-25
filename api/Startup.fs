@@ -30,18 +30,43 @@ type Startup private () =
         services.AddScoped<IPizzaDataManager, PizzaDataManager>()
         |> ignore
 
+        services.AddScoped<IRestauranteDataManager, RestauranteDataManager>()
+        |> ignore
+
         // Logic
         services.AddScoped<IPizzaLogic, PizzaLogic>()
+        |> ignore
+
+        services.AddScoped<IRestauranteLogic, RestauranteLogic>()
         |> ignore
 
         // DbContext
         services.AddDbContext<CustomDbContext>() |> ignore
 
+        services.AddSwaggerGen() |> ignore
+
+        services.AddCors (fun options ->
+            options.AddPolicy(
+                "AllowAll",
+                fun builder ->
+                    builder
+                        .WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials()
+                    |> ignore
+            ))
+        |> ignore
+
+
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     member this.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
         if (env.IsDevelopment()) then
             app.UseDeveloperExceptionPage() |> ignore
+            app.UseSwagger() |> ignore
+            app.UseSwaggerUI() |> ignore
 
+        app.UseCors("AllowAll") |> ignore
         app.UseHttpsRedirection() |> ignore
         app.UseRouting() |> ignore
 

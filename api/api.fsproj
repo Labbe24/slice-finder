@@ -7,16 +7,22 @@
   <ItemGroup>
     <!-- Models -->
     <Compile Include="Models/Pizza.fs" />
+    <Compile Include="Models/Restaurante.fs" />
     <Compile Include="Context/DbContext.fs" />
     <!-- DataManagers -->
     <Compile Include="DataManagers/PizzaDataManager.fs" />
+    <Compile Include="DataManagers/RestauranteDataManager.fs" />
     <!-- Logic -->
     <Compile Include="Logic/PizzaLogic.fs" />
+    <Compile Include="Logic/RestauranteLogic.fs" />
     <!-- Controllers -->
     <Compile Include="Controllers/PizzaController.fs" />
+    <Compile Include="Controllers/RestauranteController.fs" />
     <!-- Migrations -->
     <Compile Include="Migrations/CustomDbContextModelSnapshot.fs" />
     <Compile Include="Migrations/20220905070820_Initial.fs" />
+    <Compile Include="Migrations/20220925094507_RestauranteModel.fs" />
+    <Compile Include="Migrations/20220925102640_RestauranteSet.fs" />
     
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />
@@ -25,6 +31,7 @@
   <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.FSharp" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <!-- <PackageReference Include="MIcrosoft.EntityFrameworkCore.SqlServer" Version="6.0.8" /> -->
   </ItemGroup>
 

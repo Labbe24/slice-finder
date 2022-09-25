@@ -10,10 +10,17 @@ open Microsoft.EntityFrameworkCore.Storage.ValueConversion
 open api.Context
 
 [<DbContext(typeof<CustomDbContext>)>]
-type CustomDbContextModelSnapshot() =
-    inherit ModelSnapshot()
+[<Migration("20220925094507_RestauranteModel")>]
+type RestauranteModel() =
+    inherit Migration()
 
-    override this.BuildModel(modelBuilder: ModelBuilder) =
+    override this.Up(migrationBuilder:MigrationBuilder) =
+        ()
+
+    override this.Down(migrationBuilder:MigrationBuilder) =
+        ()
+
+    override this.BuildTargetModel(modelBuilder: ModelBuilder) =
         modelBuilder.HasAnnotation("ProductVersion", "6.0.8") |> ignore
 
         modelBuilder.Entity("api.Models.Pizza", (fun b ->
@@ -34,27 +41,6 @@ type CustomDbContextModelSnapshot() =
 
 
             b.ToTable("Pizzas") |> ignore
-
-        )) |> ignore
-
-        modelBuilder.Entity("api.Models.Restaurante", (fun b ->
-
-            b.Property<int>("Id")
-                .IsRequired(true)
-                .ValueGeneratedOnAdd()
-                .HasColumnType("INTEGER")
-                |> ignore
-
-            b.Property<string>("Name")
-                .IsRequired(true)
-                .HasColumnType("TEXT")
-                |> ignore
-
-            b.HasKey("Id")
-                |> ignore
-
-
-            b.ToTable("Restaurantes") |> ignore
 
         )) |> ignore
 
